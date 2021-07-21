@@ -1,0 +1,21 @@
+{
+    "name": "knowit-color-theme",
+    "displayName": "KnowIT Color Theme",
+    "description": "Tema de colores para VS Code enfocado principalmente en PowerShell",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "KnowIT Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/knowit-dark-color-theme.json"
+            }
+        ]
+    }
+}
