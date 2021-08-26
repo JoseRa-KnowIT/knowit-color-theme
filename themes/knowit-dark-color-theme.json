@@ -46,14 +46,61 @@
 			}
 		},
 		{
+			"name": "Comment",
+			"scope": [
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"fontStyle": "",
+			}
+		},
+		{
 			"name": "Comment-based Help (PowerShell)",
 			"scope": [
 				"comment.documentation",
-				"keyword.operator.documentation",
+				"keyword.operator.documentation"
 			],
 			"settings": {
 				"foreground": "#E6E6FAEA",
 				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Keyword",
+			"scope": [
+				"keyword",
+				"keyword.control",
+				//"keyword.other.array",
+				//"keyword.other.hashtable",
+				"storage.type.powershell",
+				"meta.function.powershell storage.type"
+			],
+			"settings": {
+				"foreground": "#b14381",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "Types",
+			"scope": [
+				"support.type",
+				"storage.type",
+				"variable.parameter",
+				"meta.scriptblock storage.type.powershell",
+				"meta.group.simple.subexpression storage.type.powershell"
+			],
+			"settings": {
+				"foreground": "#6796e6",
+				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Type Modules",
+			"scope": [
+				"variable.parameter.powershell"
+			],
+			"settings": {
+				"fontStyle": "bold"
 			}
 		},
 		{
@@ -70,40 +117,15 @@
 		{
 			"name": "Variable methods and attributes",
 			"scope": [
+				"meta.requires keyword.other",
 				"variable.other.member",
 				"meta.hashtable.assignment variable",
 				"variable.entity.property.tle.arm-template",
+				"variable.other.property.bicep",
 				"variable.other.readwrite.bicep"
 			],
 			"settings": {
 				"foreground": "#E6E6FAEA",
-				"fontStyle": ""
-			}
-		},
-		{
-			"name": "Keyword",
-			"scope": [
-				"keyword",
-				"keyword.control",
-				//"keyword.other.array",
-				//"keyword.other.hashtable",
-				"meta.function.powershell storage.type",
-				"storage.type.powershell"
-			],
-			"settings": {
-				"foreground": "#b14381",
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"name": "Storage Type",
-			"scope": [
-				"storage.type",
-				"variable.parameter",
-				"meta.scriptblock storage.type.powershell"
-			],
-			"settings": {
-				"foreground": "#6796e6",
 				"fontStyle": ""
 			}
 		},
@@ -124,7 +146,14 @@
 				"punctuation.section.embedded"
 			],
 			"settings": {
-				"foreground": "#FFF0F5"
+				"foreground": "#FFF0F5",
+				"fontStyle": ""
+			}
+		},
+		{
+			"scope": "meta.decorator.bicep",
+			"settings": {
+				"foreground": "#E289BC"
 			}
 		},
 		{
@@ -151,38 +180,41 @@
 		{
 			"name": "Function, Special Method",
 			"scope": [
-				"entity.name.function",
+			//	"entity.name.function",
 				"meta.function-call",
 				"variable.function",
 				"support.function",
-				"keyword.other.special-method"
+				"keyword.other.special-method",
+				"entity.name.function.bicep"
+				//"meta.function-call entity.name.function.bicep"
 			],
 			"settings": {
-				"foreground": "#ffe4b5"
+				"foreground": "#ffe4b5",
+				"fontStyle": ""
 			}
 		},
 		{
 			"name": "Language directives, Modifiers",
 			"scope": [
-				"keyword.control.using",
-				"keyword.other",
+		//		"keyword.control.using",
+			//	"keyword.other",
+				"storage.modifier",
 				"support.function.attribute",
-				"storage.modifier"
 			],
 			"settings": {
-				"foreground": "#eeb375"
+				"foreground": "#eeb375",
+				//"fontStyle": ""
 			}
 		},
 		{
 			"name": "Language attributes",
 			"scope": [
 				"variable.parameter.attribute",
-				"support.variable.automatic",
 				"variable.other.property.bicep"
 			],
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#00C0C0"
+				"foreground": "#00c0c0"
 			}
 		},
 		{
@@ -190,20 +222,31 @@
 			"scope": [
 				"support.other.variable",
 				"string.other.link",
-				"meta.block variable.other",
-				
+				"meta.block variable.other"
 			],
 			"settings": {
-				"foreground": "#eeb375"
+				"foreground": "#eeb375",
+				"fontStyle": ""
+			}
+
+		},
+		{
+			"name": "Language variable",
+			"scope": [
+				"variable.language",
+			],
+			"settings": {
+				"foreground": "#E289BC",
+				"fontStyle": ""
 			}
 		},
 		{
 			"name": "Built-in variable",
 			"scope": [
-				"variable.language"
+				"support.variable.automatic"
 			],
 			"settings": {
-				"foreground": "#E289BC",
+				"foreground": "#00c0c0",
 				"fontStyle": ""
 			}
 		},
@@ -277,16 +320,8 @@
 				"support.type.sys-types"
 			],
 			"settings": {
-				"foreground": "#80d394"
-			}
-		},
-		{
-			"name": "Entity Types",
-			"scope": [
-				"support.type"
-			],
-			"settings": {
-				"foreground": "#6796e6"
+				"foreground": "#80D394",
+				"fontStyle": "bold"
 			}
 		},
 		{
