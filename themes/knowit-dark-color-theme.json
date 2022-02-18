@@ -38,7 +38,7 @@
 			"name": "Comment",
 			"scope": [
 				"comment",
-				"punctuation.definition.comment"
+				//"punctuation.definition.comment"
 			],
 			"settings": {
 				"fontStyle": "italic",
@@ -48,7 +48,7 @@
 		{
 			"name": "Comment",
 			"scope": [
-				"punctuation.definition.comment"
+				"punctuation.definition.comment.block"
 			],
 			"settings": {
 				"fontStyle": "",
@@ -72,8 +72,8 @@
 				"keyword.control",
 				//"keyword.other.array",
 				//"keyword.other.hashtable",
-				"storage.type.powershell",
-				"meta.function.powershell storage.type"
+				//"storage.type.powershell",
+				"meta.function.powershell storage.type.powershell"
 			],
 			"settings": {
 				"foreground": "#b14381",
@@ -81,26 +81,39 @@
 			}
 		},
 		{
-			"name": "Types",
-			"scope": [
-				"support.type",
-				"storage.type",
-				"variable.parameter",
-				"meta.scriptblock storage.type.powershell",
-				"meta.group.simple.subexpression storage.type.powershell"
-			],
+			"name": "Other Keyword",
+			"scope": "keyword.other",
 			"settings": {
-				"foreground": "#6796e6",
 				"fontStyle": ""
 			}
 		},
 		{
-			"name": "Type Modules",
+			"name": "Types, Classes",
 			"scope": [
-				"variable.parameter.powershell"
+				"entity.name.type",
+				"storage.type.powershell"
 			],
 			"settings": {
+				"foreground": "#FF8080"
+			}
+		},
+		{
+			"scope": "entity.name.function.powershell",
+			"settings": {
+				"foreground": "#6699cc",
 				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "Support Types",
+			"scope": [
+				"support.type",
+				"storage.type",
+				"variable.parameter"
+				//"storage.type.powershell",
+			],
+			"settings": {
+				"foreground": "#6796e6",
 			}
 		},
 		{
@@ -110,28 +123,26 @@
 				"string constant.other.placeholder"
 			],
 			"settings": {
-				"foreground": "#c594c5",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"name": "Variable methods and attributes",
-			"scope": [
-				"meta.requires keyword.other",
-				"variable.other.member",
-				"meta.hashtable.assignment variable",
-				"variable.entity.property.tle.arm-template",
-				"variable.other.property.bicep",
-				"variable.other.readwrite.bicep"
-			],
-			"settings": {
 				"foreground": "#E6E6FAEA",
 				"fontStyle": ""
 			}
 		},
+		// {
+		// 	"name": "Variable methods and attributes",
+		// 	"scope": [
+		// 		"meta.requires keyword.other",
+		// 		"meta.hashtable.assignment variable",
+		// 		"variable.entity.property.tle.arm-template",
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#E6E6FAEA",
+		// 		"fontStyle": ""
+		// 	}
+		// },
 		{
 			"name": "Operator, Misc",
 			"scope": [
+				"keyword.symbol",
 				"keyword.operator",
 				"keyword.other.template",
 				"keyword.other.substitution",
@@ -151,12 +162,6 @@
 			}
 		},
 		{
-			"scope": "meta.decorator.bicep",
-			"settings": {
-				"foreground": "#E289BC"
-			}
-		},
-		{
 			"name": "Logic Operator",
 			"scope": [
 				"keyword.operator.comparison",
@@ -164,6 +169,12 @@
 			],
 			"settings": {
 				"fontStyle": "italic"
+			}
+		},
+		{
+			"scope": "meta.decorator.bicep",
+			"settings": {
+				"foreground": "#E289BC"
 			}
 		},
 		{
@@ -180,12 +191,13 @@
 		{
 			"name": "Function, Special Method",
 			"scope": [
-			//	"entity.name.function",
+				"function",
+				"entity.name.function",
+				"support.function",
+				//"entity.name.function.bicep",
 				"meta.function-call",
 				"variable.function",
-				"support.function",
-				"keyword.other.special-method",
-				"entity.name.function.bicep"
+				"keyword.other.special-method"
 				//"meta.function-call entity.name.function.bicep"
 			],
 			"settings": {
@@ -194,23 +206,58 @@
 			}
 		},
 		{
-			"name": "Language directives, Modifiers",
+			"name": "Properties",
 			"scope": [
-		//		"keyword.control.using",
-			//	"keyword.other",
-				"storage.modifier",
-				"support.function.attribute",
+				"variable.other.property",
+				"variable.other.member"
 			],
 			"settings": {
-				"foreground": "#eeb375",
+				"foreground": "#6699cc",
+				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Attributes",
+			"scope": [
+				"meta.hashtable.assignment variable",
+				"entity.other.attribute-name"
+			],
+			"settings": {
+				"foreground": "#6699cc",
+			}
+		},
+		{
+			"name": "Language directives, Modifiers",
+			"scope": [
+				"support.function.attribute"
+			],
+			"settings": {
+				"foreground": "#C594C5",
 				//"fontStyle": ""
+			}
+		},
+		{
+			"scope": "support.function.attribute.fsharp",
+			"settings": {
+				"foreground": "#EEB375"
+			}
+		},
+		{
+			"name": "Language variable",
+			"scope": [
+				"variable.language",
+				"storage.modifier"
+			],
+			"settings": {
+				//"foreground": "#E289BC",
+				"foreground": "#EEB375",
+				"fontStyle": ""
 			}
 		},
 		{
 			"name": "Language attributes",
 			"scope": [
-				"variable.parameter.attribute",
-				"variable.other.property.bicep"
+				"variable.parameter.attribute"
 			],
 			"settings": {
 				"fontStyle": "",
@@ -229,16 +276,6 @@
 				"fontStyle": ""
 			}
 
-		},
-		{
-			"name": "Language variable",
-			"scope": [
-				"variable.language",
-			],
-			"settings": {
-				"foreground": "#E289BC",
-				"fontStyle": ""
-			}
 		},
 		{
 			"name": "Built-in variable",
@@ -308,20 +345,16 @@
 			}
 		},
 		{
-			"name": "Class, Support",
+			"name": "Namespaces",
 			"scope": [
-				"entity.name",
-				"support.type",
+				"entity.name.namespace",
+				"variable.parameter.powershell",
 				"support.class",
-				"support.other.namespace.use.php",
-				"meta.use.php",
-				"support.other.namespace.php",
 				"markup.changed.git_gutter",
 				"support.type.sys-types"
 			],
 			"settings": {
-				"foreground": "#80D394",
-				"fontStyle": "bold"
+				"foreground": "#00C0C0"
 			}
 		},
 		{
@@ -367,15 +400,6 @@
 			],
 			"settings": {
 				"foreground": "#82AAFF"
-			}
-		},
-		{
-			"name": "Attributes",
-			"scope": [
-				"entity.other.attribute-name"
-			],
-			"settings": {
-				"foreground": "#c594c5"
 			}
 		},
 		{
@@ -460,6 +484,7 @@
 				"*uri*"
 			],
 			"settings": {
+				"foreground": "#89DDFF",
 				"fontStyle": "underline"
 			}
 		},
@@ -761,5 +786,33 @@
 				"foreground": "#EEFFFF"
 			}
 		}
-	]
+	],
+	"semanticHighlighting": true,
+	"semanticTokenColors": {
+		"plainKeyword": {
+			"bold": false
+		},
+		"type": "#FF8080",
+		"class": {
+			"foreground": "#FF8080",
+			"fontStyle": ""
+		},
+		"class.static": "#00C0C0",
+		"namespace": {
+			"foreground": "#00C0C0",
+			"fontStyle": ""
+		},
+		"function": "#FFE4B5",
+		"property": {
+			"foreground": "#EEB375",
+			"fontStyle": ""
+		},
+		"local": {
+			"foreground": "#E6E6FAEA",
+			"fontStyle": ""
+		},
+		"property.static": {
+			"underline": true
+		}
+	}
 }
