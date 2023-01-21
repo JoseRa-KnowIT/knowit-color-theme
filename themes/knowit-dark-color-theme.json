@@ -2,6 +2,8 @@
 	"name": "knowit-dark",
 	"type": "dark",
 	"colors": {
+		"window.activeBorder": "#505d70",
+        "window.inactiveBorder": "#090c13",
 		"titleBar.activeBackground": "#253250",
 		"titleBar.activeForeground": "#f8f8f0",
 		"tab.inactiveBackground": "#191919",
@@ -35,7 +37,6 @@
 	},
 	"tokenColors": [
 		{
-			"name": "Comment",
 			"scope": [
 				"comment",
 				//"punctuation.definition.comment"
@@ -46,7 +47,7 @@
 			}
 		},
 		{
-			"name": "Comment",
+			"name": "Comment punctuation",
 			"scope": [
 				"punctuation.definition.comment.block"
 			],
@@ -66,13 +67,23 @@
 			}
 		},
 		{
+			"scope": "string",
+			"settings": {
+				"foreground": "#5ECBFF",
+			}
+		},
+		{
+			"name": "String Quoted PowerShell",
+			"scope": "string.quoted.double.powershell",
+			"settings": {
+				"fontStyle": "italic"
+			}
+		},
+		{
 			"name": "Keyword",
 			"scope": [
 				"keyword",
 				"keyword.control",
-				//"keyword.other.array",
-				//"keyword.other.hashtable",
-				//"storage.type.powershell",
 				"meta.function.powershell storage.type.powershell"
 			],
 			"settings": {
@@ -98,6 +109,7 @@
 			}
 		},
 		{
+			"name": "PowerShell Function Declaration",
 			"scope": "entity.name.function.powershell",
 			"settings": {
 				"foreground": "#6699cc",
@@ -110,10 +122,9 @@
 				"support.type",
 				"storage.type",
 				"variable.parameter"
-				//"storage.type.powershell",
 			],
 			"settings": {
-				"foreground": "#6796e6",
+				"foreground": "#6699cc",
 			}
 		},
 		{
@@ -304,9 +315,8 @@
 			}
 		},
 		{
-			"name": "String, Symbols, Inherited Class, Markup Heading",
+			"name": "Symbols, Inherited Class, Markup Heading",
 			"scope": [
-				"string",
 				"constant.other.symbol",
 				"constant.other.key",
 				"entity.other.inherited-class",
@@ -790,9 +800,12 @@
 	"semanticHighlighting": true,
 	"semanticTokenColors": {
 		"plainKeyword": {
+			"foreground": "#E289BC",
 			"bold": false
 		},
 		"type": "#FF8080",
+		"typeParameter": "#E289BC",
+		"typeParameter:fsharp": "#E6E6FAEA",
 		"class": {
 			"foreground": "#FF8080",
 			"fontStyle": ""
@@ -803,16 +816,22 @@
 			"fontStyle": ""
 		},
 		"function": "#FFE4B5",
+		"enum": "#FF8080",
+		"enumMember": {
+			"foreground": "#6796E6",
+			"fontStyle": "underline"
+		},
 		"property": {
 			"foreground": "#EEB375",
 			"fontStyle": ""
 		},
+		"property:fsharp": "#6699cc",
+		"property.static": {
+			"underline": true
+		},
 		"local": {
 			"foreground": "#E6E6FAEA",
 			"fontStyle": ""
-		},
-		"property.static": {
-			"underline": true
 		}
 	}
 }
